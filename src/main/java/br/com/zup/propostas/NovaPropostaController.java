@@ -28,6 +28,7 @@ public class NovaPropostaController {
 	public ResponseEntity<?> cadastra(@RequestBody @Valid NovaPropostaRequest request,
 			UriComponentsBuilder uriBuilder) {
 		
+		/*010.nao_pode_haver_proposta*/
 		if(propostaRepository.existsByDocumento(request.getDocumento())) {
 			return ResponseEntity.unprocessableEntity().build();
 		}

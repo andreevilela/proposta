@@ -1,5 +1,6 @@
 package br.com.zup.propostas;
 
+/*015.consultando_dados_solicitante*/
 public class AnaliseDePropostaResponse {
 
 	private String documento;

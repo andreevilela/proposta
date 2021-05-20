@@ -18,6 +18,7 @@ import feign.FeignException;
 @RequestMapping("/api/propostas")
 public class NovaPropostaController {
 	
+	/*015.consultando_dados_solicitante*/
 	@Autowired
 	private PropostaRepository propostaRepository;
 	
@@ -35,8 +36,7 @@ public class NovaPropostaController {
 		
 		Proposta novaProposta = request.paraProposta();
 		
-		propostaRepository.save(novaProposta);
-		
+		/*inicio 015.consultando_dados_solicitante*/
 		try {
 			AnaliseDePropostaRequest analiseRequest = 
 					new AnaliseDePropostaRequest(novaProposta.getDocumento(),
@@ -47,13 +47,13 @@ public class NovaPropostaController {
 			Status status = resultadoDaConsulta.status();
 				
 			novaProposta.setStatus(status);
-						
+					
 		} catch (FeignException.UnprocessableEntity entity) {
 			novaProposta.setStatus(Status.NAO_ELEGIVEL);
 			
-		} catch (FeignException.ServiceUnavailable ex) {
-			propostaRepository.delete(novaProposta);
 		}
+		
+		/*fim 015.consultando_dados_solicitante*/
 		
 		propostaRepository.save(novaProposta);
 		

@@ -1,6 +1,8 @@
-package br.com.zup.propostas;
+package br.com.zup.request;
 
 import javax.validation.constraints.NotBlank;
+
+import br.com.zup.propostas.Endereco;
 
 public class EnderecoRequest {
 
@@ -24,8 +26,6 @@ public class EnderecoRequest {
 	private String complemento;
 
 	public EnderecoRequest() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public EnderecoRequest(@NotBlank String cep, @NotBlank String rua, @NotBlank String numero, @NotBlank String bairro,

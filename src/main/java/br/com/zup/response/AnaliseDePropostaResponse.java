@@ -1,6 +1,8 @@
-package br.com.zup.propostas;
+package br.com.zup.response;
 
-/*015.consultando_dados_solicitante*/
+import br.com.zup.propostas.enums.ResultadoSolicitacao;
+import br.com.zup.propostas.enums.Status;
+
 public class AnaliseDePropostaResponse {
 
 	private String documento;
@@ -9,8 +11,6 @@ public class AnaliseDePropostaResponse {
 	private ResultadoSolicitacao resultadoSolicitacao;
 
 	public AnaliseDePropostaResponse() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public AnaliseDePropostaResponse(String documento, String nome, String idProposta,
@@ -40,7 +40,7 @@ public class AnaliseDePropostaResponse {
 
 	public Status status() {
 		return resultadoSolicitacao.getStatus();
-		
+
 	}
 
 }

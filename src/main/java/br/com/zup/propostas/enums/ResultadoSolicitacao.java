@@ -1,12 +1,9 @@
-package br.com.zup.propostas;
+package br.com.zup.propostas.enums;
 
-/*015.consultando_dados_solicitante*/
 public enum ResultadoSolicitacao {
-	
-	
-	COM_RESTRICAO(Status.NAO_ELEGIVEL),
-	SEM_RESTRICAO(Status.ELEGIVEL);
-	
+
+	COM_RESTRICAO(Status.NAO_ELEGIVEL), SEM_RESTRICAO(Status.ELEGIVEL);
+
 	private Status status;
 
 	ResultadoSolicitacao(Status status) {
@@ -16,7 +13,5 @@ public enum ResultadoSolicitacao {
 	public Status getStatus() {
 		return status;
 	}
-	
-	
 
 }

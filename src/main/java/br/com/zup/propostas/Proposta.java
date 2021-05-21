@@ -16,6 +16,9 @@ import javax.validation.constraints.Positive;
 
 import com.sun.istack.NotNull;
 
+import br.com.zup.propostas.enums.Status;
+import br.com.zup.validacao.Documento;
+
 @Entity
 public class Proposta {
 
@@ -46,13 +49,7 @@ public class Proposta {
 	@Enumerated(EnumType.STRING)
 	private Status status;
 
-	/*
-	 * @deprecated apenas para o uso do hibernate
-	 */
-	@Deprecated
 	public Proposta() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Proposta(@Email @NotBlank String email, @NotBlank String nome, @Positive BigDecimal salario,

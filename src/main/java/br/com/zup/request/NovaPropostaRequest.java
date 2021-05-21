@@ -1,4 +1,4 @@
-package br.com.zup.propostas;
+package br.com.zup.request;
 
 import java.math.BigDecimal;
 
@@ -8,6 +8,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 
 import com.sun.istack.NotNull;
+
+import br.com.zup.propostas.Endereco;
+import br.com.zup.propostas.Proposta;
+import br.com.zup.validacao.Documento;
 
 public class NovaPropostaRequest {
 
@@ -31,8 +35,6 @@ public class NovaPropostaRequest {
 	private EnderecoRequest endereco;
 
 	public NovaPropostaRequest() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public NovaPropostaRequest(@Email @NotBlank String email, @NotBlank String nome, @Positive BigDecimal salario,
@@ -63,12 +65,6 @@ public class NovaPropostaRequest {
 
 	public EnderecoRequest getEndereco() {
 		return endereco;
-	}
-
-	@Override
-	public String toString() {
-		return "NovaPropostaRequest [email=" + email + ", nome=" + nome + ", salario=" + salario + ", documento="
-				+ documento + ", endereco=" + endereco + "]";
 	}
 
 	public Proposta paraProposta() {

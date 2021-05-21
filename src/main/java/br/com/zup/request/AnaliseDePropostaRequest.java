@@ -1,4 +1,4 @@
-package br.com.zup.propostas;
+package br.com.zup.request;
 
 public class AnaliseDePropostaRequest {
 
@@ -6,14 +6,7 @@ public class AnaliseDePropostaRequest {
 	private String nome;
 	private Long idProposta;
 
-	/*
-	 * @deprecated apenas para o uso do framework
-	 */
-
-	@Deprecated
 	public AnaliseDePropostaRequest() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public AnaliseDePropostaRequest(String documento, String nome, Long idProposta) {

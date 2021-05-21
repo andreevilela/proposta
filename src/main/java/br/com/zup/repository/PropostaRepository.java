@@ -1,12 +1,11 @@
-package br.com.zup.propostas;
+package br.com.zup.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import br.com.zup.propostas.Proposta;
+
 public interface PropostaRepository extends JpaRepository<Proposta, Long> {
-	
-	/*010.nao_pode_haver_proposta*/
+
 	boolean existsByDocumento(String documento);
-	
-	
 
 }

@@ -1,4 +1,4 @@
-package br.com.zup.propostas;
+package br.com.zup.validacao;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

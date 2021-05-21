@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 
 @Embeddable
 public class Endereco {
-		
+
 	@NotBlank
 	private String cep;
 
@@ -25,13 +25,7 @@ public class Endereco {
 	private String estado;
 	private String complemento;
 
-	/*
-	 * @deprecated apenas para o uso do hibernate
-	 */	
-	@Deprecated
 	public Endereco() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Endereco(@NotBlank String cep, @NotBlank String rua, @NotBlank String numero, @NotBlank String bairro,

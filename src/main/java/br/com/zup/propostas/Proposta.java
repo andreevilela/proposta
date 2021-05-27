@@ -2,6 +2,7 @@ package br.com.zup.propostas;
 
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -48,6 +51,10 @@ public class Proposta {
 
 	@Enumerated(EnumType.STRING)
 	private Status status;
+
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "idCartao")
+	Cartao cartao;
 
 	public Proposta() {
 	}
@@ -90,9 +97,23 @@ public class Proposta {
 		return status;
 	}
 
+	public Cartao getCartao() {
+		return cartao;
+	}
+
 	public void setStatus(Status status) {
 		this.status = status;
 
+	}
+
+	public void setCartao(Cartao cartao) {
+		this.cartao = cartao;
+	}
+
+	@Override
+	public String toString() {
+		return "Proposta [id=" + id + ", email=" + email + ", nome=" + nome + ", salario=" + salario + ", documento="
+				+ documento + ", endereco=" + endereco + ", status=" + status + ", cartao=" + cartao + "]";
 	}
 
 }

@@ -35,8 +35,8 @@ public class NovaPropostaController {
 	@PostMapping
 	public ResponseEntity<?> cadastra(@RequestBody @Valid NovaPropostaRequest request,
 			UriComponentsBuilder uriBuilder) {
-		
-		if(propostaRepository.existsByDocumento(request.getDocumento())) {
+
+		if (propostaRepository.existsByDocumento(request.getDocumento())) {
 			return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
 		}
 
@@ -48,7 +48,7 @@ public class NovaPropostaController {
 
 			AnaliseDePropostaResponse resultadoDaConsulta = analiseClient.consulta(analiseRequest);
 			Status status = resultadoDaConsulta.status();
-			System.out.println("passou aqui");
+
 			novaProposta.setStatus(status);
 
 		} catch (FeignException.UnprocessableEntity entity) {
